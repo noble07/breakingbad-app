@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Breaking Bad App
+
+This is and app create with [breakingbadapi](https://www.breakingbadapi.com/documentation)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
