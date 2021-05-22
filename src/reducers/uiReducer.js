@@ -13,7 +13,7 @@ const uiReducer = (state = initialState, action) => {
         modalOpen: true
       }
 
-    case types.uiCloaseModal:
+    case types.uiCloseModal:
       return {
         ...state,
         modalOpen: false
