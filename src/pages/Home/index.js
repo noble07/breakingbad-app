@@ -1,20 +1,30 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Container, Divider, Pagination } from 'semantic-ui-react'
+import {
+  Container,
+  Dimmer,
+  Divider,
+  Image,
+  Loader,
+  Pagination,
+  Segment } from 'semantic-ui-react'
+import { useDispatch, useSelector } from "react-redux";
+
 import FilterForm from 'components/Forms/FilterForm'
 import CharactersList from 'components/Characters/CharactersList'
 import LoginModal from 'components/LoginModal'
-import { startLoadingCharacters } from "actions/character";
+
+import { startGettingCharacters } from "actions/character";
 
 import logo from 'assets/logo.png'
 
 const Home = () => {
 
+  const {loading} = useSelector(state => state.char)
   const dispatch = useDispatch()
 
   useEffect(() => {
     
-    dispatch(startLoadingCharacters())
+    dispatch(startGettingCharacters())
 
   }, [dispatch])
 
@@ -23,8 +33,25 @@ const Home = () => {
       <img className="logo-app" src={logo} alt="Logo" />
       <FilterForm />
       <Divider clearing />
-      <CharactersList />
+
+      {
+        (!loading) 
+          ? <CharactersList />
+          : (
+            <Segment>
+              <Dimmer active inverted>
+                <Loader size="large">Loading</Loader>
+              </Dimmer>
+
+              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
+            </Segment>
+          )
+      }
+
+
+
       <Pagination
+        disabled={loading}
         style={{marginTop: 25, marginBottom: 25}}
         size="large"
         defaultActivePage={1}

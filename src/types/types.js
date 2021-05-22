@@ -11,6 +11,8 @@ export const types = {
   uiCloseModal: '[ui] Close modal',
 
   /** [Cha] Character Actions */
-  characterLoad: '[Cha] Load charactes'
+  characterLoad: '[Cha] Load charactes',
+  characterStartLoading: '[Cha] Start Loading charactes',
+  characterFinishLoading: '[Cha] Finish Loading charactes'
 
 }

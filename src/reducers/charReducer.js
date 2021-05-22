@@ -1,7 +1,8 @@
 import { types } from "types/types";
 
 const initialState = {
-  characters: []
+  characters: [],
+  loading: false
 }
 
 const charReducer = (state = initialState, action) => {
@@ -11,6 +12,18 @@ const charReducer = (state = initialState, action) => {
       return {
         ...state,
         characters: [...action.payload]
+      }
+
+    case types.characterStartLoading:
+      return {
+        ...state,
+        loading: true
+      }
+    
+      case types.characterFinishLoading:
+      return {
+        ...state,
+        loading: false
       }
   
     default:
