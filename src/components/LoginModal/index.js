@@ -7,10 +7,11 @@ import {
   Modal,
   Segment,
 } from "semantic-ui-react";
+import GoogleButton from "components/GoogleButton";
 
 const LoginModal = () => {
   return (
-    <Modal open={false} basic>
+    <Modal open={true} basic>
       <Modal.Content>
         <Modal.Description>
           <Segment placeholder>
@@ -32,6 +33,9 @@ const LoginModal = () => {
                   />
 
                   <Button content="Ingresar" basic color="green" size="huge" />
+
+                  <GoogleButton />
+                
                 </Form>
               </Grid.Column>
 
