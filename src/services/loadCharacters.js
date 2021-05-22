@@ -1,13 +1,14 @@
+import { loadQuotes } from "./loadQuotes"
 import { API_URL } from "./settings"
 
-const fromApiResponseToCha = characters => {
+const fromApiResponseToCharacters = async(characters) => {
   
   if (Array.isArray(characters)) {
-    const resCharacters = characters.map(character => {
+    const resCharacters = await Promise.all(characters.map(async(character) => {
       const {char_id, name, birthday, img, nickname} = character
-      
-      return {char_id, name, birthday, img, nickname}
-    })
+      const quotes = await loadQuotes(name)
+      return {char_id, name, birthday, img, nickname, quotes}
+    }))
 
     return resCharacters
   }
@@ -22,5 +23,5 @@ export const loadCharacters = () => {
 
   return fetch(apiURL)
     .then(res => res.json())
-    .then(fromApiResponseToCha)
+    .then(fromApiResponseToCharacters)
 }

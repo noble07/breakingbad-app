@@ -1,8 +1,8 @@
-import { Card, Image } from "semantic-ui-react";
+import { Card, Image, Message } from "semantic-ui-react";
 import PropTypes from 'prop-types'
 import QuotesList from "components/Quotes/QuotesList";
 
-const CharacterCard = ({ name, birthday, img, nickname }) => {
+const CharacterCard = ({ name, birthday, img, nickname, quotes }) => {
   return (
     <Card style={{ textAlign: "left" }} color="green">
       <Image
@@ -21,7 +21,16 @@ const CharacterCard = ({ name, birthday, img, nickname }) => {
           <span className="date">Nacido el {birthday}</span>
         </Card.Meta>
         <Card.Description>
-          <QuotesList />
+          {
+            (quotes.length > 0)
+              ? <QuotesList quotes={quotes} />
+              : (
+                <Message warning>
+                  El personaje no tiene frases
+                </Message>
+              )
+          }
+          
         </Card.Description>
       </Card.Content>
       <Card.Content extra>Nickname: {nickname}</Card.Content>
@@ -34,6 +43,7 @@ CharacterCard.propTypes = {
   birthday: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   nickname: PropTypes.string.isRequired,
+  quotes: PropTypes.array.isRequired
   
 }
 

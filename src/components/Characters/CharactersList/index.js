@@ -7,13 +7,14 @@ const CharactersList = () => {
 
   return (
     <Card.Group itemsPerRow={2}>
-      {characters.map(({ char_id, name, birthday, img, nickname }) => (
+      {characters.map(({ char_id, name, birthday, img, nickname, quotes }) => (
         <CharacterCard
           key={char_id}
           name={name}
           birthday={birthday}
           img={img}
           nickname={nickname}
+          quotes={quotes}
         />
       ))}
     </Card.Group>

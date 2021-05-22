@@ -1,12 +1,13 @@
+import { Button, Divider, Icon, Segment } from "semantic-ui-react";
+import PropTypes from 'prop-types'
 import CustomListAdd from "components/Buttons/CustomListAdd";
 import RatingButtonList from "components/Buttons/RatingButtonList";
 import Comments from "components/Comments/CommentSection";
-import { Button, Divider, Icon, Segment } from "semantic-ui-react";
 
-const QuoteItem = () => {
+const QuoteItem = ({ quoteId, quote }) => {
   return (
     <Segment size="big">
-      "You forgot your ice trays! YOU'RE GONNA NEED THE ICE TRAYS!"
+      {quote}
       <Divider fitted hidden />
       <RatingButtonList />
 
@@ -18,10 +19,14 @@ const QuoteItem = () => {
       <CustomListAdd />
 
 
-      <Comments />
+      {/* <Comments /> */}
       
     </Segment>
   );
 };
+
+QuoteItem.propTypes = {
+  quote: PropTypes.string.isRequired
+}
 
 export default QuoteItem;
