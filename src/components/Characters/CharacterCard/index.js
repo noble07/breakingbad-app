@@ -18,7 +18,7 @@ const CharacterCard = () => {
           <QuotesList />
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>Nickname: Alias</Card.Content>
+      <Card.Content extra>Nickname: Heisenberg</Card.Content>
     </Card>
   );
 };

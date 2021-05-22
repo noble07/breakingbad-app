@@ -1,6 +1,6 @@
 import MenuApp from 'components/MenuApp'
 import { Container, Divider, Pagination } from 'semantic-ui-react'
-import FilterForm from 'components/FilterForm'
+import FilterForm from 'components/Forms/FilterForm'
 import CharactersList from 'components/Characters/CharactersList'
 import LoginModal from 'components/LoginModal'
 
@@ -8,7 +8,7 @@ import logo from 'assets/logo.png'
 
 const BreakingBadApp = () => {
   return (
-    <div>
+    <>
       <MenuApp />
       <Container textAlign="center">
         <img className="logo-app" src={logo} alt="Logo" />
@@ -28,7 +28,7 @@ const BreakingBadApp = () => {
 
         <LoginModal />
       </Container>
-    </div>
+    </>
   )
 }
 
