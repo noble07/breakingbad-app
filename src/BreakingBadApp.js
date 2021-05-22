@@ -1,4 +1,4 @@
-const { default: AppRouter } = require("router/AppRouter")
+import AppRouter from 'router/AppRouter'
 
 
 const BreakingBadApp = () => {
