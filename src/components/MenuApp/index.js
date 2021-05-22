@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 
 
@@ -5,10 +6,14 @@ const MenuApp = () => {
   return (
     <Menu color="green" size="huge" inverted secondary>
       <Menu.Item>
-        Breaking Bad App
+        <Link to="/">
+          Breaking Bad App
+        </Link>
       </Menu.Item>
       <Menu.Item>
-        Listas personalizadas 
+        <Link to="/lists">
+          Listas personalizadas 
+        </Link>
       </Menu.Item>
       <Menu.Menu position='right'>
         <Menu.Item>
