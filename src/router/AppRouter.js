@@ -4,11 +4,14 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+
 import MenuApp from 'components/MenuApp'
 import Home from "pages/Home";
 import CustomLists from "pages/CustomLists";
 
 const AppRouter = () => {
+
+
   return (
     <Router>
       <MenuApp />

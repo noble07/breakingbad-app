@@ -1,3 +1,5 @@
+import { uiOpenModal } from 'actions/ui'
+import { useDispatch } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 
@@ -5,6 +7,13 @@ import { Menu } from 'semantic-ui-react'
 const MenuApp = () => {
 
   const location = useLocation()
+  const dispatch = useDispatch()
+
+
+  const handleLoginClick = () => {
+    dispatch(uiOpenModal())
+  }
+
 
   return (
     <Menu color="green" size="huge" inverted secondary>
@@ -19,7 +28,7 @@ const MenuApp = () => {
         </Link>
       </Menu.Item>
       <Menu.Menu position='right'>
-        <Menu.Item>
+        <Menu.Item onClick={handleLoginClick} >
           Login
         </Menu.Item>
       </Menu.Menu>

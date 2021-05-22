@@ -1,26 +1,40 @@
-import QuotesList from "components/Quotes/QuotesList";
 import { Card, Image } from "semantic-ui-react";
+import PropTypes from 'prop-types'
+import QuotesList from "components/Quotes/QuotesList";
 
-const CharacterCard = () => {
+const CharacterCard = ({ name, birthday, img, nickname }) => {
   return (
     <Card style={{ textAlign: "left" }} color="green">
       <Image
-        src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
-        wrapped
+        style={{
+          height: 600,
+          width: '100%',
+          objectFit: 'cover',
+          objectPosition: 'top'
+        }}
+        src={img}
         ui={false}
       />
       <Card.Content>
-        <Card.Header>Matthew</Card.Header>
+        <Card.Header>{name}</Card.Header>
         <Card.Meta>
-          <span className="date">Joined in 2015</span>
+          <span className="date">Nacido el {birthday}</span>
         </Card.Meta>
         <Card.Description>
           <QuotesList />
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>Nickname: Heisenberg</Card.Content>
+      <Card.Content extra>Nickname: {nickname}</Card.Content>
     </Card>
   );
 };
+
+CharacterCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  birthday: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  nickname: PropTypes.string.isRequired,
+  
+}
 
 export default CharacterCard;
