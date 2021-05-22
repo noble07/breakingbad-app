@@ -1,8 +1,8 @@
-import { Card, Icon, Image } from "semantic-ui-react"
+import { Card, Image } from "semantic-ui-react"
 
 const CharacterCard = () => {
   return (
-    <Card color='green'>
+    <Card style={{textAlign: 'left'}} color='green'>
       <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
       <Card.Content>
         <Card.Header>Matthew</Card.Header>
@@ -14,10 +14,7 @@ const CharacterCard = () => {
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <a href="#">
-          <Icon name='user' />
-          22 Friends
-        </a>
+        Nickname: Alias
       </Card.Content>
     </Card>
   )

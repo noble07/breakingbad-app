@@ -1,9 +1,10 @@
 import MenuApp from 'components/MenuApp'
 import { Container, Divider, Pagination } from 'semantic-ui-react'
 import FilterForm from 'components/FilterForm'
+import CharactersList from 'components/Characters/CharactersList'
+import LoginModal from 'components/LoginModal'
 
 import logo from 'assets/logo.png'
-import CharactersList from 'components/Characters/CharactersList'
 
 const BreakingBadApp = () => {
   return (
@@ -16,6 +17,7 @@ const BreakingBadApp = () => {
         <CharactersList />
         <Pagination
           style={{marginTop: 25, marginBottom: 25}}
+          size="large"
           defaultActivePage={1}
           firstItem={null}
           lastItem={null}
@@ -23,6 +25,8 @@ const BreakingBadApp = () => {
           secondary
           totalPages={3}
         />
+
+        <LoginModal />
       </Container>
     </div>
   )
