@@ -8,8 +8,13 @@ const middleware = [thunk]
 const mockStore = configureStore(middleware)
 
 const initialState = {
-  characters: [],
-  loading: false
+  char: {
+    loading: false,
+    character: []
+  },
+  ui: {
+    modalOpen: false
+  }
 }
 
 const store = mockStore(initialState)

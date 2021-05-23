@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
+<div
+  className="ui center aligned container"
+>
+  <img
+    alt="Logo"
+    className="logo-app"
+    src="logo.png"
+  />
+  <div
+    className="ui centered vertically padded grid"
+  >
+    <div
+      className="ui green compact raised center aligned segment"
+    >
+      <form
+        className="ui form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="inline field"
+        >
+          <label>
+            Filtrar:
+          </label>
+          <div
+            className="ui action input"
+          >
+            <input
+              onChange={[Function]}
+              placeholder="Nombre"
+              type="text"
+            />
+            <button
+              className="ui button"
+              onClick={[Function]}
+            >
+              Buscar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="ui clearing divider"
+  />
+  <div
+    className="ui two cards"
+  >
+    <div
+      className="ui green card"
+      onClick={[Function]}
+      style={
+        Object {
+          "textAlign": "left",
+        }
+      }
+    >
+      <img
+        className="image"
+        src="https://sitio.com/prueba.png"
+        style={
+          Object {
+            "height": 600,
+            "objectFit": "cover",
+            "objectPosition": "top",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="content"
+      >
+        <div
+          className="header"
+        >
+          Juan
+        </div>
+        <div
+          className="meta"
+        >
+          <span
+            className="date"
+          >
+            Nacido el 
+            123123
+          </span>
+        </div>
+        <div
+          className="description"
+        >
+          <div
+            className="ui warning message"
+          >
+            El personaje no tiene frases
+          </div>
+        </div>
+      </div>
+      <div
+        className="extra content"
+      >
+        Nickname: 
+        Juank
+      </div>
+    </div>
+  </div>
+  <div
+    aria-label="Pagination Navigation"
+    className="ui large pagination pointing secondary menu"
+    role="navigation"
+    style={
+      Object {
+        "marginBottom": 25,
+        "marginTop": 25,
+      }
+    }
+  >
+    <a
+      aria-current={false}
+      aria-disabled={false}
+      aria-label="Previous item"
+      className="item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+      type="prevItem"
+      value={1}
+    >
+      ⟨
+    </a>
+    <a
+      aria-current={true}
+      aria-disabled={false}
+      className="active item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+      type="pageItem"
+      value={1}
+    >
+      1
+    </a>
+    <a
+      aria-current={false}
+      aria-disabled={false}
+      className="item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+      type="pageItem"
+      value={2}
+    >
+      2
+    </a>
+    <a
+      aria-current={false}
+      aria-disabled={false}
+      className="item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+      type="pageItem"
+      value={3}
+    >
+      3
+    </a>
+    <a
+      aria-current={false}
+      aria-disabled={false}
+      aria-label="Next item"
+      className="item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+      type="nextItem"
+      value={2}
+    >
+      ⟩
+    </a>
+  </div>
+</div>
+`;
