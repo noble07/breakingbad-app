@@ -1,53 +1,14 @@
-import { useForm } from "hooks/useForm";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Button, Form, Grid, Header, Message } from "semantic-ui-react";
-
-import { setError, removeError } from "actions/ui";
-import validator from "validator";
-import { startRegisterWithEmailPassword } from "actions/auth";
+import { useRegisterForm } from "./useRegisterForm";
 
 const RegisterForm = () => {
 
-  const dispatch = useDispatch()
-  const {msgError} = useSelector(state => state.ui)
-
-  const [formValues, handleInputChange] = useForm({
-    name: '',
-    email: '',
-    password: '',
-    password2: ''
-  })
+  const {msgError, loading} = useSelector(state => state.ui)
+  const {handleInputChange, handleRegister, formValues} = useRegisterForm()
 
   const {name, email, password, password2} = formValues
 
-  const handleRegister = (e) => {
-    e.preventDefault()
-
-    if (isFormValid()){
-      dispatch(startRegisterWithEmailPassword(email, password, name))
-    }
-    
-  }
-
-  const isFormValid = () => {
-
-    if ( name.trim().length === 0 ) {
-      dispatch( setError('El nombre es requerido') );
-      return false;
-    } else if ( !validator.isEmail( email ) ) {
-      dispatch( setError('Email no valido') );
-      return false;
-    } else if ( password !== password2 || password.length < 5 ){
-      dispatch( setError('La contraseña debe de tener al menos 6 caracteres y deben ser iguales') );
-      return false;
-    }
-
-    dispatch( removeError() );
-    return true;
-
-  }
-  
-  
 
   return (
     <Grid.Column>
@@ -97,7 +58,14 @@ const RegisterForm = () => {
           error
           content={msgError}
         />
-        <Button content="Registrarse" basic color="grey" size="large" />
+        <Button
+          basic
+          content="Registrarse"
+          color="grey"
+          size="large"
+          disabled={loading}
+        />
+
       </Form>
     </Grid.Column>
   );

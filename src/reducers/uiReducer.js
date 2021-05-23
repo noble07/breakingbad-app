@@ -2,7 +2,8 @@ import { types } from "types/types"
 
 const initialState = {
   modalOpen: false,
-  msgError: null
+  msgError: null,
+  loading: false
 }
 
 const uiReducer = (state = initialState, action) => {
@@ -30,6 +31,18 @@ const uiReducer = (state = initialState, action) => {
       return {
         ...state,
         msgError: null
+      }
+    
+    case types.uiStartLoading:
+      return {
+        ...state,
+        loading: true
+      }
+
+    case types.uiFinishLoading:
+      return {
+        ...state,
+        loading: false
       }
   
     default:

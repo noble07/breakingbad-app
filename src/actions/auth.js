@@ -1,9 +1,12 @@
 import { firebase, googleAuthProvider } from "firebase/firebase-cofing";
 import { types } from "types/types";
-import { setError, uiCloseModal } from "./ui";
+import { setError, uiCloseModal, uiFinishLoading, uiStartLoading } from "./ui";
 
 export const startRegisterWithEmailPassword = (email, password, name) => {
   return (dispatch) => {
+
+    dispatch(uiStartLoading())
+
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -12,6 +15,7 @@ export const startRegisterWithEmailPassword = (email, password, name) => {
 
         dispatch(login(user.uid, user.displayName));
         dispatch(uiCloseModal());
+        dispatch(uiFinishLoading())
       })
       .catch((e) => {
         dispatch(setError(e.message));

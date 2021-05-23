@@ -10,3 +10,7 @@ export const setError = (error) => ({
 });
 
 export const removeError = () => ({ type: types.uiRemoveError });
+
+export const uiStartLoading = () => ({ type: types.uiStartLoading })
+
+export const uiFinishLoading = () => ({ type: types.uiFinishLoading })
