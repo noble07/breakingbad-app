@@ -25,7 +25,12 @@ const initialState = {
         birthday: '123123',
         img: 'https://sitio.com/prueba.png',
         nickname: 'Juank',
-        quotes: []
+        quotes: [
+          {
+            quote_id: 123,
+            quote: 'Prueba'
+          }
+        ]
       }
     ]
   },

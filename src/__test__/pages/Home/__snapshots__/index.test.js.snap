@@ -93,9 +93,124 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
           className="description"
         >
           <div
-            className="ui warning message"
+            className="ui raised segments"
           >
-            El personaje no tiene frases
+            <div
+              className="ui tiny segment"
+            >
+              Prueba
+              <div
+                className="ui fitted hidden divider"
+              />
+              Array [
+                <div
+                  className="ui right labeled button"
+                  onClick={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <button
+                    className="ui red mini button"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="heart icon"
+                      onClick={[Function]}
+                    />
+                  </button>
+                  <a
+                    className="ui red left pointing basic label"
+                    onClick={[Function]}
+                  >
+                    3
+                  </a>
+                </div>,
+                <div
+                  className="ui right labeled button"
+                  onClick={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <button
+                    className="ui yellow mini button"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="star icon"
+                      onClick={[Function]}
+                    />
+                  </button>
+                  <a
+                    className="ui yellow left pointing basic label"
+                    onClick={[Function]}
+                  >
+                    3
+                  </a>
+                </div>,
+                <div
+                  className="ui right labeled button"
+                  onClick={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <button
+                    className="ui orange mini button"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fire icon"
+                      onClick={[Function]}
+                    />
+                  </button>
+                  <a
+                    className="ui orange left pointing basic label"
+                    onClick={[Function]}
+                  >
+                    3
+                  </a>
+                </div>,
+              ]
+              <button
+                className="ui blue tiny button"
+                onClick={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="comment alternate outline icon"
+                  onClick={[Function]}
+                />
+                Comentarios
+              </button>
+              <button
+                className="ui brown small button"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <i
+                  aria-hidden="true"
+                  className="bookmark icon"
+                  onClick={[Function]}
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
