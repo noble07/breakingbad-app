@@ -14,13 +14,13 @@ const QuoteItem = ({ quoteId, quote }) => {
   }
 
   return (
-    <Segment size="big">
+    <Segment size="tiny">
       {quote}
       <Divider fitted hidden />
       <RatingButtonList />
 
       <Button
-        size="small"
+        size="tiny"
         color="blue"
         onClick={handleCommentClick}
       >

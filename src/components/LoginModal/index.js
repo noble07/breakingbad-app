@@ -13,6 +13,8 @@ const LoginModal = () => {
     dispatch(uiCloseModal())
   }
 
+  //TODO: Ajustar layout del formulario de register
+
   return (
     <Modal
       open={modalOpen}
