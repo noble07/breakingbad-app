@@ -22,7 +22,7 @@ const LoginForm = () => {
   return (
     <Grid.Column>
       <Header as="h2">Ingreso</Header>
-      <Form size="huge">
+      <Form size="large">
         <Form.Input
           icon="mail"
           iconPosition="left"
@@ -42,7 +42,7 @@ const LoginForm = () => {
           vale={password}
         />
 
-        <Button content="Ingresar" basic color="green" size="huge" />
+        <Button content="Ingresar" basic color="green" size="large" />
 
         <GoogleButton buttonClick={handleGoogleLogin} />
       </Form>
