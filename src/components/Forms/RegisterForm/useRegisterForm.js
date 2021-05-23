@@ -1,7 +1,7 @@
 import { useForm } from "hooks/useForm";
 import { useDispatch} from "react-redux";
 
-import { setError, removeError } from "actions/ui";
+import { setErrorRegister, removeErrorRegister } from "actions/ui";
 import validator from "validator";
 import { startRegisterWithEmailPassword } from "actions/auth";
 
@@ -30,17 +30,17 @@ export const useRegisterForm = () => {
   const isFormValid = () => {
 
     if ( name.trim().length === 0 ) {
-      dispatch( setError('El nombre es requerido') );
+      dispatch( setErrorRegister('El nombre es requerido') );
       return false;
     } else if ( !validator.isEmail( email ) ) {
-      dispatch( setError('Email no valido') );
+      dispatch( setErrorRegister('Email no valido') );
       return false;
     } else if ( password !== password2 || password.length < 5 ){
-      dispatch( setError('La contraseña debe de tener al menos 6 caracteres y deben ser iguales') );
+      dispatch( setErrorRegister('La contraseña debe de tener al menos 6 caracteres y deben ser iguales') );
       return false;
     }
 
-    dispatch( removeError() );
+    dispatch( removeErrorRegister() );
     return true;
 
   }

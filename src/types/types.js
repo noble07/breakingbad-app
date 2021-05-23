@@ -19,8 +19,12 @@ export const types = {
   uiFinishLoading: '[ui] Finish loading',
 
   /** [ui] Form set error types */
-  uiSetError: '[ui] Set Error',
-  uiRemoveError: '[ui] Remove Error',
+  uiSetErrorRegister: '[ui] Set register Error',
+  uiRemoveErrorRegister: '[ui] Remove register Error',
+  
+  /** [ui] Form set error types */
+  uiSetErrorLogin: '[ui] Set login Error',
+  uiRemoveErrorLogin: '[ui] Remove login Error',
 
   /** [Cha] Character Actions */
   characterLoad: '[Cha] Load charactes',

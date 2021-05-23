@@ -4,12 +4,19 @@ export const uiOpenModal = () => ({ type: types.uiOpenModal });
 
 export const uiCloseModal = () => ({ type: types.uiCloseModal });
 
-export const setError = (error) => ({ 
-  type: types.uiSetError,
+export const setErrorRegister = (error) => ({ 
+  type: types.uiSetErrorRegister,
   payload: error
 });
 
-export const removeError = () => ({ type: types.uiRemoveError });
+export const removeErrorRegister = () => ({ type: types.uiRemoveErrorRegister });
+
+export const setErrorLogin = (error) => ({ 
+  type: types.uiSetErrorLogin,
+  payload: error
+});
+
+export const removeErrorLogin = () => ({ type: types.uiRemoveErrorLogin });
 
 export const uiStartLoading = () => ({ type: types.uiStartLoading })
 

@@ -2,7 +2,8 @@ import { types } from "types/types"
 
 const initialState = {
   modalOpen: false,
-  msgError: null,
+  msgErrorRegister: null,
+  msgErrorLogin: null,
   loading: false
 }
 
@@ -21,16 +22,16 @@ const uiReducer = (state = initialState, action) => {
         modalOpen: false
       }
 
-    case types.uiSetError:
+    case types.uiSetErrorRegister:
       return {
         ...state,
-        msgError: action.payload
+        msgErrorRegister: action.payload
       }
     
-    case types.uiRemoveError:
+    case types.uiRemoveErrorRegister:
       return {
         ...state,
-        msgError: null
+        msgErrorRegister: null
       }
     
     case types.uiStartLoading:

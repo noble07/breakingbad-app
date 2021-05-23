@@ -1,6 +1,23 @@
 import { firebase, googleAuthProvider } from "firebase/firebase-cofing";
 import { types } from "types/types";
-import { setError, uiCloseModal, uiFinishLoading, uiStartLoading } from "./ui";
+import { setErrorLogin, setErrorRegister, uiCloseModal, uiFinishLoading, uiStartLoading } from "./ui";
+
+export const startLoginEmailPassword = (email, password) => {
+
+  return ( dispatch ) => {
+    dispatch( uiStartLoading() );
+
+    return firebase.auth().signInWithEmailAndPassword( email, password )
+      .then( ({ user }) => {
+          dispatch( login( user.uid, user.displayName ) );
+          dispatch( uiFinishLoading() );
+      })
+      .catch(e => {
+          dispatch( uiFinishLoading() );
+          dispatch(setErrorLogin(e.message))
+      });
+  }
+}
 
 export const startRegisterWithEmailPassword = (email, password, name) => {
   return (dispatch) => {
@@ -18,7 +35,8 @@ export const startRegisterWithEmailPassword = (email, password, name) => {
         dispatch(uiFinishLoading())
       })
       .catch((e) => {
-        dispatch(setError(e.message));
+        dispatch(setErrorRegister(e.message));
+        dispatch(uiFinishLoading())
       });
   };
 };

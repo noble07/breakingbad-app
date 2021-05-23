@@ -4,7 +4,7 @@ import { useRegisterForm } from "./useRegisterForm";
 
 const RegisterForm = () => {
 
-  const {msgError, loading} = useSelector(state => state.ui)
+  const {msgErrorRegister, loading} = useSelector(state => state.ui)
   const {handleInputChange, handleRegister, formValues} = useRegisterForm()
 
   const {name, email, password, password2} = formValues
@@ -13,7 +13,7 @@ const RegisterForm = () => {
   return (
     <Grid.Column>
       <Header as="h2">Registro</Header>
-      <Form size="large" onSubmit={handleRegister} error={msgError && true} >
+      <Form size="large" onSubmit={handleRegister} error={msgErrorRegister && true} >
         <Form.Group>
           <Form.Input
             icon="user"
@@ -56,7 +56,7 @@ const RegisterForm = () => {
         </Form.Group>
         <Message
           error
-          content={msgError}
+          content={msgErrorRegister}
         />
         <Button
           basic
