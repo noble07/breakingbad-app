@@ -13,18 +13,17 @@ const LoginModal = () => {
     dispatch(uiCloseModal())
   }
 
-  //TODO: Ajustar layout del formulario de register
-
   return (
     <Modal
       open={modalOpen}
       onClose={handleCloseModal}
       basic
+      size="large"
     >
       <Modal.Content>
         <Modal.Description>
           <Segment placeholder>
-            <Grid columns={2} relaxed stackable>
+            <Grid columns={2} verticalAlign="middle" relaxed stackable>
               <LoginForm />
 
               <RegisterForm />

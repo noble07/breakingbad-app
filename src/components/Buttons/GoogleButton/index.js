@@ -1,12 +1,12 @@
 import './index.css'
 
-const GoogleButton = () => {
+const GoogleButton = ({ buttonClick }) => {
   return (
     <div className="auth__social-networks">
         <p>Registrate con las redes sociales</p>
         <div 
             className="google-btn"
-            //TODO: onClick
+            onClick={buttonClick}
         >
             <div className="google-icon-wrapper">
                 <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />

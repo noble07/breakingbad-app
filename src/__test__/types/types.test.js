@@ -6,6 +6,10 @@ describe('Pruebas en los types', () => {
 
     expect(types).toEqual({
 
+      /** [Auth] Action */
+      login: '[Auth] Login',
+      logout: '[Auth] Logout',
+
       /** [ui] Actions */
       uiOpenModal: '[ui] Open modal',
       uiCloseModal: '[ui] Close modal',
@@ -18,6 +22,5 @@ describe('Pruebas en los types', () => {
     })
     
   })
-  
 
 })
