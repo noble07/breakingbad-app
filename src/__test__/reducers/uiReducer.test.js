@@ -1,5 +1,5 @@
-const { default: uiReducer } = require("reducers/uiReducer")
-const { types } = require("types/types")
+import uiReducer from 'reducers/uiReducer'
+import { types } from 'types/types'
 
 describe('Pruebas en uiReducer', () => {
   
