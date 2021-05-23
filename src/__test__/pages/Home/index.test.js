@@ -39,12 +39,12 @@ const initialState = {
   }
 }
 
-const store = mockStore(initialState)
-store.dispatch = jest.fn
-
 describe('Pruebas en la pagina del Home', () => {
   
   test('debe de mostrarse correctamente', () => {
+
+    const store = mockStore(initialState)
+    store.dispatch = jest.fn
     
     const wrapper = mount(
       <Provider store={store}>
@@ -56,5 +56,23 @@ describe('Pruebas en la pagina del Home', () => {
     expect(startGettingCharacters).toHaveBeenCalled()
 
   })
+
+  test('debe de mostrar mensaje de "No tiene frases el personaje"', () => {
+
+    initialState.char.characters[0].quotes = []
+    
+    const store = mockStore(initialState)
+    store.dispatch = jest.fn
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <Home />
+      </Provider>
+    )
+
+    expect(wrapper.find('.warning').text()).toBe('El personaje no tiene frases')
+
+  })
+  
 
 })
