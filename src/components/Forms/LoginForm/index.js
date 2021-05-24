@@ -11,7 +11,7 @@ import GoogleButton from "components/Buttons/GoogleButton";
 const LoginForm = () => {
 
   const dispatch = useDispatch()
-  const {msgError, loading} = useSelector(state => state.ui)
+  const {msgErrorLogin, loading} = useSelector(state => state.ui)
 
   const [formValues, handleInputChange] = useForm({
     email: '',
@@ -21,6 +21,7 @@ const LoginForm = () => {
   const {email, password} = formValues
 
   const handleLogin = (e) => {
+
     e.preventDefault();
 
     if (isFormValid()) {   
@@ -32,13 +33,14 @@ const LoginForm = () => {
   const isFormValid = () => {
 
     if ( !validator.isEmail( email ) ) {
-        dispatch( setErrorLogin('Email is not valid') );
+        dispatch( setErrorLogin('Email no es valido') );
         return false;
     } else if ( password.length < 6 ){
-        dispatch( setErrorLogin('Password should be at least 6 characters') );
+        console.log('Llego')
+        console.log(password)
+        dispatch( setErrorLogin('La constraseña debe de contener al menos 6 letras') );
         return false;
     }
-
     dispatch( removeErrorLogin() );
     return true;
   }
@@ -50,7 +52,7 @@ const LoginForm = () => {
   return (
     <Grid.Column>
       <Header as="h2">Ingreso</Header>
-      <Form size="large" onSubmit={ handleLogin } error={msgError && true}>
+      <Form size="large" onSubmit={ handleLogin } error={msgErrorLogin && true}>
         <Form.Input
           icon="mail"
           iconPosition="left"
@@ -66,13 +68,14 @@ const LoginForm = () => {
           iconPosition="left"
           label="Contraseña"
           type="password"
+          name="password"
           onChange={handleInputChange}
           vale={password}
         />
 
         <Message
           error
-          content={msgError}
+          content={msgErrorLogin}
         />
 
         <Button

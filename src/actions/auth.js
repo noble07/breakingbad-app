@@ -11,6 +11,7 @@ export const startLoginEmailPassword = (email, password) => {
       .then( ({ user }) => {
           dispatch( login( user.uid, user.displayName ) );
           dispatch( uiFinishLoading() );
+          dispatch( uiCloseModal() )
       })
       .catch(e => {
           dispatch( uiFinishLoading() );

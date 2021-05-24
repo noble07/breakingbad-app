@@ -34,6 +34,18 @@ const uiReducer = (state = initialState, action) => {
         msgErrorRegister: null
       }
     
+    case types.uiSetErrorLogin:
+      return {
+        ...state,
+        msgErrorLogin: action.payload
+      }
+    
+    case types.uiRemoveErrorLogin:
+      return {
+        ...state,
+        msgErrorLogin: null
+      }
+    
     case types.uiStartLoading:
       return {
         ...state,
