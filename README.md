@@ -2,6 +2,10 @@
 
 Está aplicación esta consumiendo [breakingbadapi](https://www.breakingbadapi.com/documentation) para obtener la info.
 
+La maqueta se realizó utilizando la librería de semantic UI
+
+Los test fueron realizados con la ayuda de Enzyme y redux-mock-store
+
 En la realización de la app se utilizo Redux para manejar el estado global de la aplicación, junto con Firebase para el login del usuario.
 
 En los formularios se utilizo un custom hook para realizar el control del estado de los mismos y el modulo de Validator para las validaciones.
