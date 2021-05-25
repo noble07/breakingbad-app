@@ -8,6 +8,8 @@ Los test fueron realizados con la ayuda de Enzyme y redux-mock-store
 
 En la realización de la app se utilizo Redux para manejar el estado global de la aplicación, junto con Firebase para el login del usuario.
 
+Se valida la ruta de listas para mostrar la sección en el menú por si el usuario está logeado con el componente `<PrivateRoute />`
+
 En los formularios se utilizo un custom hook para realizar el control del estado de los mismos y el modulo de Validator para las validaciones.
 
 El despliegue se realizo con Vercel y se conecto directamente a GitHub para tener el Continius Integration cada vez que se realiza un cambio a la rama main
