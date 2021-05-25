@@ -1,23 +1,22 @@
 import { Form, Grid, Input, Segment } from "semantic-ui-react"
+import PropTypes from 'prop-types'
 
-const FilterForm = () => {
 
-  const handleClick = () => {
-    console.log('Click del boton!!!')
-  }
-  
+const FilterForm = ({filterSubmit, filterChange}) => {
 
   return (
     <Grid centered padded="vertically">
       <Segment color='green' textAlign="center" compact raised>
-        <Form>
+        <Form onSubmit={filterSubmit}>
           <Form.Field inline>
             <label>Filtrar:</label>
             <Input
               placeholder="Nombre"
+              name="filter"
+              onChange={filterChange}
               action={{
                 content: 'Buscar',
-                onClick: handleClick
+                type: 'submit'
               }}
             />
           </Form.Field>
@@ -25,6 +24,10 @@ const FilterForm = () => {
       </Segment>
     </Grid>
   )
+}
+
+FilterForm.propTypes = {
+  filterSubmit: PropTypes.func.isRequired
 }
 
 export default FilterForm

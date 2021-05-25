@@ -2,7 +2,8 @@ import { types } from "types/types";
 
 const initialState = {
   characters: [],
-  loading: false
+  loading: false,
+  filtered: false
 }
 
 const charReducer = (state = initialState, action) => {
@@ -12,6 +13,12 @@ const charReducer = (state = initialState, action) => {
       return {
         ...state,
         characters: [...action.payload]
+      }
+
+    case types.characterFilter:
+      return {
+        ...state,
+        filtered: action.payload
       }
 
     case types.characterStartLoading:

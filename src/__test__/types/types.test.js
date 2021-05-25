@@ -29,7 +29,10 @@ describe('Pruebas en los types', () => {
       /** [Cha] Character Actions */
       characterLoad: '[Cha] Load charactes',
       characterStartLoading: '[Cha] Start Loading charactes',
-      characterFinishLoading: '[Cha] Finish Loading charactes'
+      characterFinishLoading: '[Cha] Finish Loading charactes',
+
+      /** [Quo] Quotes Actions */
+      quoteSetRate: '[Quo] Set quote rate'
 
     })
     

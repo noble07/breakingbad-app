@@ -16,11 +16,16 @@ import LoginModal from 'components/LoginModal'
 import { startGettingCharacters } from "actions/character";
 
 import logo from 'assets/logo.png'
+import { useForm } from "hooks/useForm";
 
 const Home = () => {
 
   const [page, setPage] = useState(1)
-  const {loading} = useSelector(state => state.char)
+  const [formValues, handleChangeFilter] = useForm({filter: ''})
+  const {filter} = formValues
+
+
+  const {loading, filtered} = useSelector(state => state.char)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -29,17 +34,19 @@ const Home = () => {
 
   }, [dispatch, page])
 
+  
   const handlePageChange = ( e ,{activePage}) => {
-    
     setPage(activePage)
-
   }
   
-
+  const handleFilterSubmit = () => {
+    dispatch(startGettingCharacters({filter}))
+  }
+  
   return (
     <Container textAlign="center">
       <img className="logo-app" src={logo} alt="Logo" />
-      <FilterForm />
+      <FilterForm filterSubmit={handleFilterSubmit} filterChange={handleChangeFilter} />
       <Divider clearing />
 
       {
@@ -56,20 +63,22 @@ const Home = () => {
           )
       }
 
+      {
+        !filtered &&
+        <Pagination
+          disabled={loading}
+          style={{marginTop: 25, marginBottom: 25}}
+          size="large"
+          firstItem={null}
+          lastItem={null}
+          activePage={page}
+          pointing
+          secondary
+          totalPages={4}
+          onPageChange={handlePageChange}
+        />
+      }
 
-
-      <Pagination
-        disabled={loading}
-        style={{marginTop: 25, marginBottom: 25}}
-        size="large"
-        firstItem={null}
-        lastItem={null}
-        activePage={page}
-        pointing
-        secondary
-        totalPages={4}
-        onPageChange={handlePageChange}
-      />
 
       <LoginModal />
     </Container> 

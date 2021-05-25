@@ -18,8 +18,13 @@ const fromApiResponseToCharacters = async(characters) => {
 }
 
 
-export const loadCharacters = ({page}) => {
-  const apiURL = `${API_URL}/characters?limit=5&offset=${(page-1)*5}`
+export const loadCharacters = ({page = 1, filter = ''}) => {
+
+  let urlParams = `limit=5&offset=${(page-1)*5}`
+
+  if (filter && filter !== '') urlParams = `name=${filter}`
+
+  const apiURL = `${API_URL}/characters?${urlParams}`
 
   return fetch(apiURL)
     .then(res => res.json())

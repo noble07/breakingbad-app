@@ -4,7 +4,7 @@ import { setErrorLogin, setErrorRegister, uiCloseModal, uiFinishLoading, uiStart
 
 /**
  * 
- * Acción para inicar el logeo con email y password
+ * Acción para inicar el logeo con email y password en Firebase
  * 
  */
 
@@ -25,6 +25,13 @@ export const startLoginEmailPassword = (email, password) => {
       });
   }
 }
+
+/**
+ * 
+ * Acción para registrar el usuario con email y password en Firebase
+ * 
+ */
+
 
 export const startRegisterWithEmailPassword = (email, password, name) => {
   return (dispatch) => {
@@ -48,6 +55,12 @@ export const startRegisterWithEmailPassword = (email, password, name) => {
   };
 };
 
+/**
+ * 
+ * Acción para logear al usuario con google
+ * 
+ */
+
 export const startGoogleLogin = () => {
   return (dispatch) => {
     firebase
@@ -60,6 +73,12 @@ export const startGoogleLogin = () => {
   };
 };
 
+/**
+ * 
+ * Añade el usuario logeado al estado global
+ * 
+ */
+
 export const login = (uid, displayName) => ({
   type: types.login,
   payload: {
@@ -68,12 +87,24 @@ export const login = (uid, displayName) => ({
   },
 });
 
+/**
+ * 
+ * Realiza el logout desde firebase y hace el logout
+ * 
+ */
+
 export const startLogout = () => {
   return async (dispatch) => {
     await firebase.auth().signOut();
     dispatch(logout());
   };
 };
+
+/**
+ * 
+ * Quita al usuario del estado global
+ * 
+ */
 
 export const logout = () => ({
   type: types.logout,
