@@ -23,8 +23,10 @@ describe('Prueba en character actions', () => {
 
 
   test('startGettingCharacters debe de obtener los personajes', async() => {
+
     
-    await store.dispatch(startGettingCharacters())
+    
+    await store.dispatch(startGettingCharacters({page: 1, filter: ''}))
 
     const actions = store.getActions()
 
