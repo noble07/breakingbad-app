@@ -2,7 +2,7 @@ import { uiCloseModal } from "actions/ui";
 import LoginForm from "components/Forms/LoginForm";
 import RegisterForm from "components/Forms/RegisterForm";
 import { useDispatch, useSelector } from "react-redux";
-import { Divider, Grid, Modal, Segment } from "semantic-ui-react";
+import { Grid, Modal, Segment } from "semantic-ui-react";
 
 const LoginModal = () => {
 
@@ -15,10 +15,11 @@ const LoginModal = () => {
 
   return (
     <Modal
+      closeIcon
       open={modalOpen}
       onClose={handleCloseModal}
       basic
-      size="large"
+      size="fullscreen"
     >
       <Modal.Content>
         <Modal.Description>
@@ -28,7 +29,6 @@ const LoginModal = () => {
 
               <RegisterForm />
             </Grid>
-            <Divider vertical>Or</Divider>
           </Segment>
         </Modal.Description>
       </Modal.Content>

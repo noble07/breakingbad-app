@@ -24,14 +24,14 @@ const MenuApp = () => {
     <Menu color="green" size="huge" inverted secondary>
       <Menu.Item active={ location.pathname === '/' } >
         <Link to="/">
-          Breaking Bad App
+          Home
         </Link>
       </Menu.Item>
       {
         auth.logged &&
         <Menu.Item active={ location.pathname === '/lists' }>
           <Link to="/lists">
-            Listas personalizadas 
+            Listas 
           </Link>
         </Menu.Item>
 

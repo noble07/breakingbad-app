@@ -6,7 +6,7 @@ const CharactersList = () => {
   const { characters } = useSelector((state) => state.char);
 
   return (
-    <Card.Group itemsPerRow={2}>
+    <Card.Group itemsPerRow={2} stackable>
       {characters.map(({ char_id, name, birthday, img, nickname, quotes }) => (
         <CharacterCard
           key={char_id}

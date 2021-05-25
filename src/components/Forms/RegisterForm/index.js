@@ -14,7 +14,7 @@ const RegisterForm = () => {
     <Grid.Column>
       <Header as="h2">Registro</Header>
       <Form size="large" onSubmit={handleRegister} error={msgErrorRegister && true} >
-        <Form.Group>
+        <Form.Group widths="2">
           <Form.Input
             icon="user"
             iconPosition="left"
@@ -34,7 +34,7 @@ const RegisterForm = () => {
             onChange={handleInputChange}
           />
         </Form.Group>
-        <Form.Group>
+        <Form.Group widths="2">
           <Form.Input
             icon="lock"
             iconPosition="left"
@@ -59,6 +59,7 @@ const RegisterForm = () => {
           content={msgErrorRegister}
         />
         <Button
+          style={{marginTop: 25}}
           basic
           content="Registrarse"
           color="grey"
