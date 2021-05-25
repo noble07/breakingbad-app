@@ -20,7 +20,7 @@ const charReducer = (state = initialState, action) => {
         loading: true
       }
     
-      case types.characterFinishLoading:
+    case types.characterFinishLoading:
       return {
         ...state,
         loading: false

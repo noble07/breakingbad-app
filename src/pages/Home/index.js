@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Container,
   Dimmer,
@@ -19,14 +19,22 @@ import logo from 'assets/logo.png'
 
 const Home = () => {
 
+  const [page, setPage] = useState(1)
   const {loading} = useSelector(state => state.char)
   const dispatch = useDispatch()
 
   useEffect(() => {
     
-    dispatch(startGettingCharacters())
+    dispatch(startGettingCharacters({page}))
 
-  }, [dispatch])
+  }, [dispatch, page])
+
+  const handlePageChange = ( e ,{activePage}) => {
+    
+    setPage(activePage)
+
+  }
+  
 
   return (
     <Container textAlign="center">
@@ -54,12 +62,13 @@ const Home = () => {
         disabled={loading}
         style={{marginTop: 25, marginBottom: 25}}
         size="large"
-        defaultActivePage={1}
         firstItem={null}
         lastItem={null}
+        activePage={page}
         pointing
         secondary
-        totalPages={3}
+        totalPages={4}
+        onPageChange={handlePageChange}
       />
 
       <LoginModal />

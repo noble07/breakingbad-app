@@ -6,13 +6,25 @@ describe('Pruebas en los types', () => {
 
     expect(types).toEqual({
 
-      /** [Auth] Action */
+      /** [Auth] Type */
       login: '[Auth] Login',
       logout: '[Auth] Logout',
 
-      /** [ui] Actions */
+      /** [ui] Modal Actions */
       uiOpenModal: '[ui] Open modal',
       uiCloseModal: '[ui] Close modal',
+
+      /** [ui] Loading Types */
+      uiStartLoading: '[ui] Start loading',
+      uiFinishLoading: '[ui] Finish loading',
+
+      /** [ui] Form set error types */
+      uiSetErrorRegister: '[ui] Set register Error',
+      uiRemoveErrorRegister: '[ui] Remove register Error',
+      
+      /** [ui] Form set error types */
+      uiSetErrorLogin: '[ui] Set login Error',
+      uiRemoveErrorLogin: '[ui] Remove login Error',
 
       /** [Cha] Character Actions */
       characterLoad: '[Cha] Load charactes',

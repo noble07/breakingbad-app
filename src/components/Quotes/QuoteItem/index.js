@@ -15,9 +15,12 @@ const QuoteItem = ({ quoteId, quote }) => {
 
   return (
     <Segment size="tiny">
+
       {quote}
+
       <Divider fitted hidden />
-      <RatingButtonList />
+
+      <RatingButtonList quoteId={quoteId} />
 
       <Button
         size="tiny"
@@ -28,7 +31,7 @@ const QuoteItem = ({ quoteId, quote }) => {
         Comentarios
       </Button>
 
-      <CustomListAdd />
+      <CustomListAdd quoteId={quoteId} />
 
       {
         activeComment && <Comments />

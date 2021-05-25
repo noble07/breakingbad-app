@@ -18,8 +18,8 @@ const fromApiResponseToCharacters = async(characters) => {
 }
 
 
-export const loadCharacters = () => {
-  const apiURL = `${API_URL}/characters`
+export const loadCharacters = ({page}) => {
+  const apiURL = `${API_URL}/characters?limit=5&offset=${(page-1)*5}`
 
   return fetch(apiURL)
     .then(res => res.json())
