@@ -29,6 +29,7 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
             className="ui action input"
           >
             <input
+              name="filter"
               onChange={[Function]}
               placeholder="Nombre"
               type="text"
@@ -36,6 +37,7 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
             <button
               className="ui button"
               onClick={[Function]}
+              type="submit"
             >
               Buscar
             </button>
@@ -110,7 +112,7 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
                   tabIndex={0}
                 >
                   <button
-                    className="ui red mini button"
+                    className="ui grey mini button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onFocus={[Function]}
@@ -123,12 +125,6 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
                       onClick={[Function]}
                     />
                   </button>
-                  <a
-                    className="ui red left pointing basic label"
-                    onClick={[Function]}
-                  >
-                    3
-                  </a>
                 </div>,
                 <div
                   className="ui right labeled button"
@@ -137,7 +133,7 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
                   tabIndex={0}
                 >
                   <button
-                    className="ui yellow mini button"
+                    className="ui grey mini button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onFocus={[Function]}
@@ -150,12 +146,6 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
                       onClick={[Function]}
                     />
                   </button>
-                  <a
-                    className="ui yellow left pointing basic label"
-                    onClick={[Function]}
-                  >
-                    3
-                  </a>
                 </div>,
                 <div
                   className="ui right labeled button"
@@ -164,7 +154,7 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
                   tabIndex={0}
                 >
                   <button
-                    className="ui orange mini button"
+                    className="ui grey mini button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onFocus={[Function]}
@@ -177,12 +167,6 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
                       onClick={[Function]}
                     />
                   </button>
-                  <a
-                    className="ui orange left pointing basic label"
-                    onClick={[Function]}
-                  >
-                    3
-                  </a>
                 </div>,
               ]
               <button
@@ -281,6 +265,18 @@ exports[`Pruebas en la pagina del Home debe de mostrarse correctamente 1`] = `
       value={3}
     >
       3
+    </a>
+    <a
+      aria-current={false}
+      aria-disabled={false}
+      className="item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+      type="pageItem"
+      value={4}
+    >
+      4
     </a>
     <a
       aria-current={false}

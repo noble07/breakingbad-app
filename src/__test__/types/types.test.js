@@ -28,6 +28,7 @@ describe('Pruebas en los types', () => {
 
       /** [Cha] Character Actions */
       characterLoad: '[Cha] Load charactes',
+      characterFilter: '[Cha] Filter charactes',
       characterStartLoading: '[Cha] Start Loading charactes',
       characterFinishLoading: '[Cha] Finish Loading charactes',
 

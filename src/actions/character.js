@@ -6,7 +6,7 @@ import { types } from "types/types";
  * Obtiene los personajes con las frases llamando al servicio loadCharacters
  * 
  */
-export const startGettingCharacters = ({page, filter}) => {
+export const startGettingCharacters = ({page = 1, filter = ''}) => {
   return async(dispatch, getState) => {
 
     const {filtered} = getState().char

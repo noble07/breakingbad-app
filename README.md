@@ -1,6 +1,12 @@
 # Breaking Bad App
 
-This is and app create with [breakingbadapi](https://www.breakingbadapi.com/documentation)
+Está aplicación esta consumiendo [breakingbadapi](https://www.breakingbadapi.com/documentation) para obtener la info.
+
+En la realización de la app se utilizo Redux para manejar el estado global de la aplicación, junto con Firebase para el login del usuario.
+
+En los formularios se utilizo un custom hook para realizar el control del estado de los mismos y el modulo de Validator para las validaciones.
+
+El despliegue se realizo con Vercel y se conecto directamente a GitHub para tener el Continius Integration cada vez que se realiza un cambio a la rama main
 
 ## Getting Started with Create React App
 
