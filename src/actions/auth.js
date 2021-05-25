@@ -2,6 +2,12 @@ import { firebase, googleAuthProvider } from "firebase/firebase-cofing";
 import { types } from "types/types";
 import { setErrorLogin, setErrorRegister, uiCloseModal, uiFinishLoading, uiStartLoading } from "./ui";
 
+/**
+ * 
+ * Acción para inicar el logeo con email y password
+ * 
+ */
+
 export const startLoginEmailPassword = (email, password) => {
 
   return ( dispatch ) => {
