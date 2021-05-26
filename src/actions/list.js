@@ -33,7 +33,7 @@ export const addNewList = (id, list) => ({
   }
 })
 
-export const startLoadingList = (uid) => {
+export const startLoadingList = uid => {
   return async(dispatch) => {
 
     const lists = await loadLists(uid)
@@ -43,7 +43,24 @@ export const startLoadingList = (uid) => {
   }
 }
 
-export const setLists = (lists) => ({
+export const startDeletingList = id => {
+  return async(dispatch, getState) => {
+
+    const {uid} = getState().auth
+
+    await db.doc(`${uid}/breakingbad/lists/${id}`).delete()
+
+    dispatch(deleteList(id))
+
+  }
+}
+
+export const deleteList = id => ({
+  type: types.ListDelete,
+  payload: id
+})
+
+export const setLists = lists => ({
   type: types.listLoad,
   payload: lists
 })

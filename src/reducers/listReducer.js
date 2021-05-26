@@ -19,6 +19,12 @@ const listReducer = (state = initialState, action) => {
         lists: [ action.payload,...state.lists ]
       }
 
+    case types.ListDelete:
+      return {
+        ...state,
+        lists: state.lists.filter( list => list.id !== action.payload )
+      }
+
     default:
       return state
   }
