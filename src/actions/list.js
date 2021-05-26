@@ -64,3 +64,7 @@ export const setLists = lists => ({
   type: types.listLoad,
   payload: lists
 })
+
+export const listLogout = () => ({
+  type: types.listLogout
+})
