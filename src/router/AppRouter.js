@@ -13,6 +13,7 @@ import Home from "pages/Home";
 import CustomLists from "pages/CustomLists";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "actions/auth";
+import { startLoadingList } from "actions/list";
 
 const AppRouter = () => {
 
@@ -25,6 +26,7 @@ const AppRouter = () => {
 
       if ( user?.uid ) {
           dispatch( login( user.uid, user.displayName ) );
+          dispatch( startLoadingList( user.uid ) )
       } 
 
     });

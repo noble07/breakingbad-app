@@ -33,6 +33,10 @@ export const types = {
   characterFinishLoading: '[Cha] Finish Loading charactes',
 
   /** [Quo] Quotes Actions */
-  quoteSetRate: '[Quo] Set quote rate'
+  quoteSetRate: '[Quo] Set quote rate',
+
+  /** [List] Lists Actions */
+  listLoad: '[List] Load list',
+  listAddNew: '[List] Add new list'
 
 }

@@ -42,6 +42,7 @@ const QuoteItem = ({ quoteId, quote }) => {
 };
 
 QuoteItem.propTypes = {
+  quoteId: PropTypes.number.isRequired,
   quote: PropTypes.string.isRequired
 }
 
