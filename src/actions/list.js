@@ -3,6 +3,50 @@ import { loadLists } from "services/loadLists"
 import { types } from "types/types"
 
 
+export const startSavingQuote = ({idList, quoteId, quote}) => {
+  return async(dispatch, getState) => {
+
+    const {uid} = getState().auth
+    const {lists} = getState().list
+
+    try {
+
+      const newQuote = {
+        quoteId,
+        quote
+      }
+
+       let quotes = null
+       let keyList = null
+       
+       lists.forEach((list, key) => {
+
+        if (list.id === idList ) {
+          quotes = [...list.quotes, newQuote]
+          keyList = key
+        }
+  
+      })
+
+      await db.doc(`${uid}/breakingbad/lists/${idList}`).update({quotes})
+
+      dispatch(SaveQuote(keyList, quotes))
+      
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+}
+
+export const SaveQuote = (keyList, quotes) => ({
+  type: types.listAddQuote,
+  payload: {
+    keyList,
+    quotes
+  }
+})
+
 export const startNewList = ({name}) => {
   return async(dispatch, getState) => {
 
@@ -63,4 +107,8 @@ export const deleteList = id => ({
 export const setLists = lists => ({
   type: types.listLoad,
   payload: lists
+})
+
+export const listLogout = () => ({
+  type: types.listLogout
 })
