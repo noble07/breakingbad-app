@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 import { uiOpenModal } from 'actions/ui'
 import { startLogout } from 'actions/auth'
+import { listLogout } from 'actions/list'
 
 const MenuApp = () => {
 
@@ -17,6 +18,7 @@ const MenuApp = () => {
 
   const handleLogoutClick = () => {
     dispatch(startLogout())
+    dispatch(listLogout())
   }
 
 

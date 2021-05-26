@@ -3,9 +3,10 @@ import CustomListAddItem from "../CustomListAddItem"
 import PropTypes from 'prop-types'
 import { useSelector } from "react-redux"
 
-const CustomListAdd = ({ quoteId }) => {
+const CustomListAdd = ({ quoteId, quote }) => {
 
   const {lists} = useSelector(state => state.list)
+  const {logged} = useSelector(state => state.auth)
 
   return (
     <Popup
@@ -19,9 +20,16 @@ const CustomListAdd = ({ quoteId }) => {
       <Grid divided="vertically" verticalAlign="middle" columns={2}>
 
         {
-          lists.map(({id, name}) => (
-            <CustomListAddItem key={id} name={name} idList={id} />
-          ))
+
+          logged
+          ? (
+            lists.map(({id, name}) => (
+              <CustomListAddItem key={id} name={name} idList={id} quoteId={quoteId} quote={quote} logged={logged} />
+            ))
+          ) : (
+            <CustomListAddItem name="Debes de estar logeado" logged={logged} />
+          )
+
         }
 
       </Grid>
@@ -30,7 +38,8 @@ const CustomListAdd = ({ quoteId }) => {
 }
 
 CustomListAdd.propTypes = {
-  quoteId: PropTypes.number.isRequired
+  quoteId: PropTypes.number.isRequired,
+  quote: PropTypes.string.isRequired
 }
 
 export default CustomListAdd

@@ -31,7 +31,7 @@ const QuoteItem = ({ quoteId, quote }) => {
         Comentarios
       </Button>
 
-      <CustomListAdd quoteId={quoteId} />
+      <CustomListAdd quoteId={quoteId} quote={quote} />
 
       {
         activeComment && <Comments />

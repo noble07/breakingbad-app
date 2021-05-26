@@ -38,6 +38,8 @@ export const types = {
   /** [List] Lists Actions */
   listLoad: '[List] Load list',
   listAddNew: '[List] Add new list',
-  ListDelete: '[List] Delete a list'
+  ListDelete: '[List] Delete a list',
+  listLogout: '[List] List Logout Cleaning',
+  listAddQuote: '[List] Add quote to list'
 
 }
